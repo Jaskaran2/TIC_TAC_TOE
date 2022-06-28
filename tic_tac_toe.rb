@@ -82,6 +82,7 @@ while win==false
     display_board(board)
     correct_response=1
     puts "Player #{$user_x==true ? "X": "O"} choose from remaining positions:".blue
+    puts " "
     respond=gets.chomp.to_i
 
     
@@ -90,6 +91,7 @@ while win==false
         correct_response=0
         while correct_response==0
             warn "Wrong input!! Try again".red
+            puts " "
             respond=gets.chomp.to_i
             if inputs.include?respond or respond>9  or respond==0
                 correct_response=0
@@ -110,12 +112,24 @@ while win==false
     #Checking for end game logic
     if end_game(board)==true
         win=true
-        puts "Player  #{$user_x==true ? "O" : "X"} won".green
+        puts "---------------------------------------------".red
+        puts "Player  #{$user_x==true ? "O" : "X"} won".red
+        puts "---------------------------------------------".red
+        puts " "
         display_board(board)
       elsif chance==9
         win=true
-        puts "Draw".green
+        puts "---------------------------------------------".red
+        puts "Draw".red
+        puts "---------------------------------------------".red
+        puts " "
         display_board(board)
       end
    end
+
+
+
+
+
+
 
