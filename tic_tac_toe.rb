@@ -60,43 +60,7 @@ class Play
     end
 end
 
-  
 
-#handles the board logic such has diplaying the board, getting the position, setting value on board
-class Handleboard
-    def find_pos(board,ele)
-        pos=[]
-        for i in 0..2
-            for j in 0..2
-                if (board[i][j]==ele)
-                    pos<<i
-                    pos<<j
-                    return pos 
-                end
-            end
-        end
-    end
-    
-        
-    def mark_o_x(i,user,board,user_x)
-        if user_x==true
-            board[i[0]][i[1]]=user.green
-        else 
-            board[i[0]][i[1]]=user.yellow
-        end
-    end
-
-    def display_board(board)
-        3.times do |i|
-            3.times do |j|
-                print board[i][j].to_s+"   "
-            end
-            puts " "
-            puts " "
-        end
-    end
-
-end
     
    
 
@@ -198,6 +162,43 @@ class Toggle
         return user_x,user_o
     end
     
+end
+
+
+#handles the board logic such has diplaying the board, getting the position, setting value on board
+class Handleboard
+    def find_pos(board,ele)
+        pos=[]
+        for i in 0..2
+            for j in 0..2
+                if (board[i][j]==ele)
+                    pos<<i
+                    pos<<j
+                    return pos 
+                end
+            end
+        end
+    end
+    
+        
+    def mark_o_x(i,user,board,user_x)
+        if user_x==true
+            board[i[0]][i[1]]=user.green
+        else 
+            board[i[0]][i[1]]=user.yellow
+        end
+    end
+
+    def display_board(board)
+        3.times do |i|
+            3.times do |j|
+                print board[i][j].to_s+"   "
+            end
+            puts " "
+            puts " "
+        end
+    end
+
 end
 
 #Strat the game
